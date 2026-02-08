@@ -1,0 +1,60 @@
+---
+title: "Agile Communications Architecture"
+publishedAt: "2025-01-20"
+summary: "Researching deep learning applications in Semantic Communications to optimize data transmission in high-interference environments."
+images:
+
+---
+
+## Overview
+
+As a researcher at the **Agile Communications Architecture** group at **Georgia Tech**, I focus on the intersection of Machine Learning and Networking. My primary objective is to optimize data transmission protocols for next-generation wireless systems.
+
+## Key Features
+
+- **Generative Compression**: Developed an AI-powered system using **PyTorch** and **Stable Diffusion** that reduces image transmission size by **90%** while maintaining **95% visual accuracy**.
+- **Semantic Validation**: Utilized **OpenAI's CLIP** to quantitatively validate that compressed images maintain their semantic meaning despite drastic size reductions.
+- **Resilient Transmission**: Engineering a radio system that leverages machine learning to automatically correct bit-errors, ensuring clear data delivery in environments with high signal interference.
+
+## Technologies Used
+
+- **PyTorch**: For building and training generative ML models.
+- **Stable Diffusion**: For advanced semantic image compression.
+- **GNURadio**: For prototyping software-defined radio (SDR) transmission systems.
+- **Python**: Core language for model development and data processing.
+
+## Current Research
+
+We want to focus on Diffusion Transformer Joint Source-Channel Coding (DiT-JSCC), an end-to-end framework designed to improve image transmission over wireless channels by prioritizing semantic information.
+
+### Limitations of Previous Approaches
+
+We identified several key issues with our previous approach:
+- **Captioning Failures**: Using models like BLIP-2 to collapse an image into a short text summary often results in the loss of key visual facts, such as small objects or background attributes.
+- **Generator "Guessing"**: By nature of Stable Diffusion, although a text description can produce detailed and accurate text descriptions, the diffusion transformer may not always get the image.
+- **Traditional JSCC**: Standard JSCC features are trained primarily for pixel reconstruction and often lack the strong semantic cues necessary for diffusion generators to maintain proper object layout at low bandwidth.
+
+### New Ideas
+
+We decided to move away from unstable image-to-text conversions in favor of a dual CNN architecture.
+- Semantic Branch: This stream uses a Vision Foundation Model (VFM), 
+    specifically DINOv2, to derive a semantic latent vector. This acts as the "anchor" for the diffusion generator to ensure the scene's layout and objects are preserved.
+- Detail Branch: A secondary stream handles textures and sharpness. This is implemented using SwinJSCC as a pixel-domain encoder to transmit edges and textures that 
+    refine the final reconstruction.
+
+### Future Plans
+
+We plan on investigating into existing literature on the benefits of DeepJSCC in the context of semantic information. 
+We also plan on implementing the neural networks to physical hardware, and attempt to build upon new research to advance the field of information transmission.
+
+## Works Referenced
+
+### Wireless Semantic Communication (JSCC)
+- Tan, K., Dai, J., Wang, S., Lu, G., Shao, S., Niu, K., Zhang, W., & Zhang, P. (2026). DiT-JSCC: Rethinking Deep JSCC with Diffusion Transformers and Semantic Representations. ArXiv.org. https://arxiv.org/abs/2601.03112 
+
+- Yang, K., Wang, S., Dai, J., Qin, X., Niu, K., & Zhang, P. (2023). SwinJSCC: Taming Swin Transformer for Deep Joint Source-Channel Coding. ArXiv.org. https://arxiv.org/abs/2308.09361
+
+### Vision & Language Foundation Models
+- Oquab, M., Darcet, T., Moutakanni, T., Vo, H., Szafraniec, M., Khalidov, V., Fernandez, P., Haziza, D., Massa, F., El-Nouby, A., Assran, M., Ballas, N., Galuba, W., Howes, R., Huang, P.-Y., Li, S.-W., Misra, I., Rabbat, M., Sharma, V., & Synnaeve, G. (2023, April 14). DINOv2: Learning Robust Visual Features without Supervision. ArXiv.org. https://doi.org/10.48550/arXiv.2304.07193 
+
+- Radford, A., Kim, J. W., Hallacy, C., Ramesh, A., Goh, G., Agarwal, S., Sastry, G., Askell, A., Mishkin, P., Clark, J., Krueger, G., & Sutskever, I. (2021, February 26). Learning transferable visual models from Natural Language Supervision. arXiv.org. https://arxiv.org/abs/2103.00020 
