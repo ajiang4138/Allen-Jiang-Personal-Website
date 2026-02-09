@@ -49,6 +49,11 @@ export default function About() {
       display: about.technical.display,
       items: about.technical.skills.map((skill) => skill.title),
     },
+    ...(about.hobbies?.display ? [{
+      title: about.hobbies.title,
+      display: about.hobbies.display,
+      items: about.hobbies.items.map((item) => item.title),
+    }] : []),
   ];
   return (
     <Column maxWidth="m">
@@ -291,7 +296,7 @@ export default function About() {
               >
                 {about.technical.title}
               </Heading>
-              <Column fillWidth gap="l">
+              <Column fillWidth gap="l" marginBottom="40">
                 {about.technical.skills.map((skill, index) => (
                   <Column key={`${skill}-${index}`} fillWidth gap="4">
                     <Text id={skill.title} variant="heading-strong-l">
@@ -329,6 +334,28 @@ export default function About() {
                           </Row>
                         ))}
                       </Row>
+                    )}
+                  </Column>
+                ))}
+              </Column>
+            </>
+          )}
+
+          {about.hobbies?.display && (
+            <>
+              <Heading as="h2" id={about.hobbies.title} variant="display-strong-s" marginBottom="m">
+                {about.hobbies.title}
+              </Heading>
+              <Column fillWidth gap="l" marginBottom="40">
+                {about.hobbies.items.map((hobby, index) => (
+                  <Column key={`${hobby.title}-${index}`} fillWidth gap="4">
+                    <Text id={hobby.title} variant="heading-strong-l">
+                      {hobby.title}
+                    </Text>
+                    {hobby.description && (
+                      <Text variant="heading-default-xs" onBackground="neutral-weak">
+                        {hobby.description}
+                      </Text>
                     )}
                   </Column>
                 ))}

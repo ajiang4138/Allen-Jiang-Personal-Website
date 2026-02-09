@@ -36,18 +36,6 @@ const social: Social = [
     essential: true,
   },
   {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
-    essential: false,
-  },
-  {
     name: "Resume",
     icon: "filepdf", 
     link: "/images/Allen_Jiang_s_Resume_Spring_2026.pdf",
@@ -176,8 +164,8 @@ const about: About = {
     institutions: [
       {
         name: "Georgia Institute of Technology",
-        description: <>Bachelor of Science in Computer Science. 
-            Concentrating in Intelligence and Infornetworks.</>,
+        description: <>Bachelor of Science in Computer Science,
+            concentrating in Intelligence and Infonetworks.</>,
       },
     ],
   },
@@ -229,9 +217,61 @@ const about: About = {
           { name: "C++", icon: "cplusplus" },
           { name: "C", icon: "c" },
           { name: "SQL", icon: "sql" },
-          { name: "GNURadio", icon: "gnuradio" },
+          { name: "GNURadio", icon: "radio" },
         ],
         images: [],
+      },
+      {
+        title: "Mobile & Software Engineering",
+        description: (
+          <>
+            Experienced in native Android development and building engaging mobile 
+            experiences. Strong foundation in core computer science concepts including 
+            data structures, algorithms, and automata.
+          </>
+        ),
+        tags: [
+          { name: "Java", icon: "java" },
+          { name: "Kotlin", icon: "kotlin" },
+          { name: "Android Studio", icon: "android-studio" },
+          { name: "Firebase", icon: "firebase" },
+        ],
+        images: [],
+      },
+      {
+        title: "Developer Tools & Architecture",
+        description: (
+          <>
+            Proficient in modern development workflows and specialized tools for 
+            simulation and deployment. Experienced in collaborative version control 
+            and game engine architecture.
+          </>
+        ),
+        tags: [
+          { name: "Git", icon: "git" },
+          { name: "Vercel", icon: "vercel" },
+          { name: "Unity", icon: "unity" },
+          { name: "Jupyter", icon: "jupyter" },
+        ],
+        images: [],
+      },
+    ],
+  },
+  hobbies: {
+    display: true,
+    title: "Hobbies",
+    items: [
+      {
+        title: "Game Development",
+        description: <>I enjoy dabbling in game development using Unity and GameMakerStudios. Recent projects include an action platformer and a rogue-like game, coming to my Github soon!</>,
+      },
+      {
+        title: "Photography",
+        description: <>I occasionally travel, and enjoy capturing photos of the landscapes and cultures I encounter. Check them out in the gallery!</>,
+      },
+      {
+        title: "Guitar",
+        description: <>I enjoy playing the guitar, especially with friends or while working on projects to keep my mind engaged. I love playing the fingerstyle guitar, although I am still learning and improving my skills.</>,
       },
     ],
   },

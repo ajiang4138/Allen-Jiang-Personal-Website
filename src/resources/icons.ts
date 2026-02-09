@@ -11,7 +11,7 @@ import {
   HiOutlineEyeSlash,
   HiOutlineGlobeAsiaAustralia,
   HiOutlineLink,
-  HiOutlineRocketLaunch,
+  HiOutlineRocketLaunch
 } from "react-icons/hi2";
 
 import {
@@ -23,13 +23,29 @@ import {
 } from "react-icons/pi";
 
 import {
+  SiAndroidstudio,
+  SiC,
+  SiCplusplus,
   SiFigma,
+  SiFirebase,
+  SiGit,
   SiJavascript,
+  SiJupyter,
+  SiKotlin,
   SiNextdotjs,
+  SiPostgresql,
+  SiPython,
+  SiPytorch,
+  SiScikitlearn,
   SiSupabase,
+  SiTailwindcss,
+  SiTensorflow,
+  SiTypescript,
+  SiUnity,
+  SiVercel,
 } from "react-icons/si";
 
-import { FaDiscord, FaFacebook, FaFile, FaGithub, FaInstagram, FaLinkedin, FaPinterest, FaReddit, FaTelegram, FaThreads, FaWhatsapp, FaX, FaXTwitter } from "react-icons/fa6";
+import { FaDiscord, FaFacebook, FaFile, FaGithub, FaInstagram, FaJava, FaLinkedin, FaPinterest, FaReddit, FaTelegram, FaThreads, FaWhatsapp, FaWifi, FaX, FaXTwitter } from "react-icons/fa6";
 
 export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
@@ -65,6 +81,24 @@ export const iconLibrary: Record<string, IconType> = {
   telegram: FaTelegram,
   instagram: FaInstagram,
   filepdf: FaFile,
+  python: SiPython,
+  pytorch: SiPytorch,
+  tensorflow: SiTensorflow,
+  "scikit-learn": SiScikitlearn,
+  typescript: SiTypescript,
+  tailwindcss: SiTailwindcss,
+  cplusplus: SiCplusplus,
+  c: SiC,
+  sql: SiPostgresql,
+  radio: FaWifi,
+  java: FaJava,
+  kotlin: SiKotlin,
+  "android-studio": SiAndroidstudio,
+  firebase : SiFirebase,
+  git: SiGit,
+  vercel: SiVercel,
+  unity: SiUnity,
+  jupyter: SiJupyter,
 };
 
 export type IconLibrary = typeof iconLibrary;

@@ -101,7 +101,14 @@ export default function Home() {
         </Column>
       </Column>
       <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1, 1]} />
+        <Column fillWidth gap="24">
+          <Row horizontal="center">
+            <Heading as="h2" variant="display-strong-xs" wrap="balance">
+              Some of my works below!
+            </Heading>
+          </Row>
+          <Projects range={[1, 1]} />
+        </Column>
       </RevealFx>
       {routes["/blog"] && (
         <Column fillWidth gap="24" marginBottom="l">
