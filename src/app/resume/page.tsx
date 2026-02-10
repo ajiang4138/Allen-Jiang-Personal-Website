@@ -36,7 +36,7 @@ export default function Resume() {
         </Flex>
 
         {/* Information Section */}
-        <Column fillWidth gap="12" horizontal="center" marginTop="-32">
+        <Column fillWidth gap="12" horizontal="center" >
             <Heading variant="display-strong-l">
                 {person.name}
             </Heading>
