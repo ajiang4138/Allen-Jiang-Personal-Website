@@ -107,7 +107,14 @@ export default function Home() {
               Featured Works
             </Heading>
           </Row>
-          <Projects range={[0, 0]} />
+          <Projects
+            carouselItems={[
+              "planetway-experience",
+              "agile-communications-research",
+              "wrappedify-spotify-summaries",
+            ]}
+            carouselInterval={8000}
+          />
         </Column>
       </RevealFx>
       {routes["/blog"] && (
@@ -130,9 +137,6 @@ export default function Home() {
           </Row>
         </Column>
       )}
-      <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[2]} />
-      </RevealFx>
       <Mailchimp />
     </Column>
   );
