@@ -104,10 +104,10 @@ export default function Home() {
         <Column fillWidth gap="24">
           <Row horizontal="center">
             <Heading as="h2" variant="display-strong-xs" wrap="balance">
-              Some of my works below!
+              Featured Works
             </Heading>
           </Row>
-          <Projects range={[1, 1]} />
+          <Projects range={[0, 0]} />
         </Column>
       </RevealFx>
       {routes["/blog"] && (

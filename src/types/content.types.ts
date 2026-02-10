@@ -252,3 +252,62 @@ export interface Gallery extends BasePageConfig {
     orientation: string;
   }>;
 }
+
+/**
+ * Resume page configuration.
+ * @description Configuration for the Resume page, featuring a digital version and a download option.
+ */
+export interface Resume extends BasePageConfig {
+  /** Work experience section */
+  work: {
+    display: boolean;
+    title: string;
+    experiences: Array<{
+      company: string;
+      timeframe: string;
+      role: string;
+      location: string;
+      achievements: React.ReactNode[];
+    }>;
+  };
+  /** Education section */
+  education: {
+    display: boolean;
+    title: string;
+    institutions: Array<{
+      name: string;
+      degree: string;
+      timeframe: string;
+      location: string;
+      gpa?: string;
+      details?: React.ReactNode;
+    }>;
+  };
+  /** Projects section */
+  projects: {
+    display: boolean;
+    title: string;
+    items: Array<{
+      name: string;
+      technologies: string[];
+      date: string;
+      description: React.ReactNode[];
+    }>;
+  };
+  /** Skills section */
+  skills: {
+    display: boolean;
+    title: string;
+    categories: Array<{
+      name: string;
+      list: string[];
+    }>;
+  };
+  /** Configuration for the downloadable file */
+  download: {
+    display: boolean;
+    url: string;
+    fileName: string;
+    buttonLabel: string;
+  };
+}

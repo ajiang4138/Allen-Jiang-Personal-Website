@@ -1,4 +1,4 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import { About, Blog, Gallery, Home, Newsletter, Person, Resume, Social, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 import React from 'react';
 
@@ -346,6 +346,91 @@ const gallery: Gallery = {
   ],
 };
 
+const resume: Resume = {
+  path: "/resume",
+  label: "Resume",
+  title: `Resume - ${person.name}`,
+  description: `Read about ${person.name}'s resume here!`,
+  work: {
+    display: true,
+    title: "Experience",
+    experiences: [
+      {
+        company: "Planetway",
+        timeframe: "June 2025 - Present",
+        role: "Software Engineer",
+        location: "Remote",
+        achievements: [
+          <>Developed a responsive frontend using Next.js, TypeScript, and Tailwind CSS deployed on Vercel, enabling visualization of 8,000+ monthly data points.</>,
+          <>Engineered a scalable Supabase backend with Row Level Security and optimized SQL queries for sub-second latency.</>,
+          <>Currently refactoring SQL queries to further accelerate rendering speed for data visualizations.</>
+        ],
+      },
+      {
+        company: "Agile Communications Architecture",
+        timeframe: "January 2025 - Present",
+        role: "Researcher @ GaTech",
+        location: "Atlanta, GA",
+        achievements: [
+          <>Developed an AI-powered image compression system using PyTorch and Stable Diffusion that reduces data size by 90%.</>,
+          <>Building a resilient radio transmission system using ML to automatically correct errors in high-interference environments.</>
+        ],
+      },
+    ],
+  },
+  education: {
+    display: true,
+    title: "Education",
+    institutions: [
+      {
+        name: "Georgia Institute of Technology",
+        degree: "Bachelor of Science in Computer Science",
+        timeframe: "Expected May 2026",
+        location: "Atlanta, GA",
+        gpa: "3.7",
+        details: <>Relevant Coursework: Machine Learning, AI, Computer Networking, Algorithms, and Data Structures.</>,
+      },
+    ],
+  },
+  projects: {
+    display: true,
+    title: "Projects",
+    items: [
+      {
+        name: "Flight Connection Risk Predictor",
+        technologies: ["Python", "XGBoost", "Pandas", "scikit-learn"],
+        date: "Nov 2025",
+        description: [
+          <>Developed a ML model analyzing 15M+ flight records to predict missed connections with 90% accuracy.</>
+        ],
+      },
+      {
+        name: "Carbon Tracker",
+        technologies: ["Javascript", "React", "Vercel", "Supabase"],
+        date: "June 2025",
+        description: [
+          <>Collaborated with Planetway to build a carbon footprint tracking platform for companies with secure cloud backends.</>
+        ],
+      },
+    ],
+  },
+  skills: {
+    display: true,
+    title: "Technical Skills",
+    categories: [
+      { name: "Languages", list: ["C++", "Python", "Java", "Javascript", "SQL"] },
+      { name: "Frameworks", list: ["React", "PyTorch", "TensorFlow", "Supabase", "Vercel"] },
+      { name: "Tools", list: ["Git", "GNURadio", "Unity", "Android Studio"] },
+    ],
+  },
+  download: {
+    display: true,
+    url: "/images/Allen_Jiang_s_Resume_Spring_2026.pdf",
+    fileName: "Allen_Jiang_Resume_2026.pdf",
+    buttonLabel: "Download Full PDF",
+  },
+};
+
 const ResumeAccess: React.FC = () => {
     const handleDownload = () => {
     const link = document.createElement('a');
@@ -362,5 +447,5 @@ const ResumeAccess: React.FC = () => {
     );
 };
 
-export { about, blog, gallery, home, newsletter, person, ResumeAccess, social, work };
+export { about, blog, gallery, home, newsletter, person, resume, ResumeAccess, social, work };
 
