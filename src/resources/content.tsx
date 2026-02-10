@@ -37,7 +37,7 @@ const social: Social = [
   },
   {
     name: "Resume",
-    icon: "filepdf", 
+    icon: "resume", 
     link: "/images/Allen_Jiang_s_Resume_Spring_2026.pdf",
     essential: true,
   },
@@ -99,13 +99,14 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Hi, I'm Allen, a software engineer passionate about building intelligent systems that solve real-world problems. I enjoy data sciences and machine learning, and I love to develop games on the side!
+        Hi, I'm Allen, a software engineer passionate about building intelligent systems that solve real world problems. 
+        I enjoy data sciences and machine learning, and I'm always open to more knowledge in these fields.
         <br />
         <br />
-        Currently, I'm a student and researcher at Georgia Tech, where I'm working on developing an AI-powered image compression and resilient radio transmission system. 
+        Currently, I'm a student and researcher at Georgia Tech, where I'm working on developing an AI-powered radio transmission system. 
         <br />
         <br />
-        Feel free to reach out!
+        Feel free to reach out and connect with me on any platform!
 
       </>
     ),

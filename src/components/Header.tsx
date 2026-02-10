@@ -150,7 +150,7 @@ export const Header = () => {
                 <>
                   <Row s={{ hide: true }}>
                     <ToggleButton
-                      prefixIcon="filepdf"
+                      prefixIcon="resume"
                       href="/resume"
                       size="s"
                       label={resume.label}

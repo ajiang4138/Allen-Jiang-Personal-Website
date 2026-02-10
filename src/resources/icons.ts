@@ -16,6 +16,7 @@ import {
 
 import {
   PiBookBookmarkDuotone,
+  PiFilesDuotone,
   PiGridFourDuotone,
   PiHouseDuotone,
   PiImageDuotone,
@@ -55,6 +56,7 @@ export const iconLibrary: Record<string, IconType> = {
   person: PiUserCircleDuotone,
   grid: PiGridFourDuotone,
   book: PiBookBookmarkDuotone,
+  resume: PiFilesDuotone,
   openLink: HiOutlineLink,
   calendar: HiCalendarDays,
   home: PiHouseDuotone,
