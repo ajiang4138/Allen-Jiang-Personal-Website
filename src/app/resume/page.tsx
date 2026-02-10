@@ -54,12 +54,11 @@ export default function Resume() {
         {/* Education Section */}
         <Column fillWidth gap="24">
             <Row vertical="center" gap="16" horizontal="center">
-                <Line background="neutral-alpha-medium" flex={1} />
                 <Heading variant="display-strong-s">Education</Heading>
                 <Line background="neutral-alpha-medium" flex={1} />
             </Row>
             <Column gap="8">
-                <Row horizontal="space-between" vertical="baseline" fillWidth gap="16">
+                <Row horizontal="center" style={{ alignItems: 'baseline' }} fillWidth gap="16">
                     <Column flex={1}>
                         <Text variant="body-strong-l">Georgia Institute of Technology</Text>
                     </Column>
@@ -80,14 +79,13 @@ export default function Resume() {
         {/* Experience Section */}
         <Column fillWidth gap="24">
             <Row vertical="center" gap="16" horizontal="center">
-                <Line background="neutral-alpha-medium" flex={1} />
                 <Heading variant="display-strong-s">Experience</Heading>
                 <Line background="neutral-alpha-medium" flex={1} />
             </Row>
 
             {/* Planetway */}
             <Column gap="12" marginBottom="12">
-                <Row horizontal="space-between" vertical="baseline" fillWidth gap="16">
+                <Row horizontal="between" style={{ alignItems: 'baseline' }} fillWidth gap="16">
                     <Column flex={1} gap="4">
                         <Text variant="body-strong-l">Software Engineer @ Planetway</Text>
                         <Text variant="body-default-m" onBackground="brand-medium" weight="strong">Planetway</Text>
@@ -106,7 +104,7 @@ export default function Resume() {
 
             {/* Research */}
             <Column gap="12" marginBottom="12">
-                <Row horizontal="space-between" vertical="baseline" fillWidth gap="16">
+                <Row horizontal="between" style={{ alignItems: 'baseline' }} fillWidth gap="16">
                     <Column flex={1} gap="4">
                         <Text variant="body-strong-l">Researcher @ GaTech</Text>
                         <Text variant="body-default-m" onBackground="brand-medium" weight="strong">Agile Communications Architecture</Text>
@@ -126,14 +124,13 @@ export default function Resume() {
         {/* Projects Section */}
         <Column fillWidth gap="24">
             <Row vertical="center" gap="16" horizontal="center">
-                <Line background="neutral-alpha-medium" flex={1} />
                 <Heading variant="display-strong-s">Projects</Heading>
                 <Line background="neutral-alpha-medium" flex={1} />
             </Row>
 
             {/* Flight Connection Risk Predictor */}
             <Column gap="12" marginBottom="12">
-                <Row horizontal="space-between" vertical="baseline" fillWidth gap="16">
+                <Row horizontal="between" style={{ alignItems: 'baseline' }} fillWidth gap="16">
                     <Column flex={1} gap="4">
                         <Text variant="body-strong-l">Flight Connection Risk Predictor</Text>
                         <Text variant="body-default-m" onBackground="brand-medium" weight="strong">Python, XGBoost, Pandas, scikit-learn</Text>
@@ -148,7 +145,7 @@ export default function Resume() {
 
             {/* Carbon Tracker */}
             <Column gap="12" marginBottom="12">
-                <Row horizontal="space-between" vertical="baseline" fillWidth gap="16">
+                <Row horizontal="between" style={{ alignItems: 'baseline' }} fillWidth gap="16">
                     <Column flex={1} gap="4">
                         <Text variant="body-strong-l">Carbon Tracker</Text>
                         <Text variant="body-default-m" onBackground="brand-medium" weight="strong">Javascript, React, Vercel, Supabase</Text>
@@ -163,7 +160,7 @@ export default function Resume() {
 
             {/* Wrappedify App */}
             <Column gap="12" marginBottom="12">
-                <Row horizontal="space-between" vertical="baseline" fillWidth gap="16">
+                <Row horizontal="between" style={{ alignItems: 'baseline' }} fillWidth gap="16">
                     <Column flex={1} gap="4">
                         <Text variant="body-strong-l">Wrappedify App</Text>
                         <Text variant="body-default-m" onBackground="brand-medium" weight="strong">Java, Kotlin</Text>
@@ -178,7 +175,7 @@ export default function Resume() {
 
             {/* Number Recognition Software */}
             <Column gap="12" marginBottom="12">
-                <Row horizontal="space-between" vertical="baseline" fillWidth gap="16">
+                <Row horizontal="between" style={{ alignItems: 'baseline' }} fillWidth gap="16">
                     <Column flex={1} gap="4">
                         <Text variant="body-strong-l">Number Recognition Software</Text>
                         <Text variant="body-default-m" onBackground="brand-medium" weight="strong">Python, Tensorflow, Keras</Text>
@@ -194,12 +191,11 @@ export default function Resume() {
         {/* Leadership Section */}
         <Column fillWidth gap="24">
             <Row vertical="center" gap="16" horizontal="center">
-                <Line background="neutral-alpha-medium" flex={1} />
                 <Heading variant="display-strong-s">Leadership</Heading>
                 <Line background="neutral-alpha-medium" flex={1} />
             </Row>
             <Column gap="12" marginBottom="12">
-                <Row horizontal="space-between" vertical="baseline" fillWidth gap="16">
+                <Row horizontal="between" style={{ alignItems: 'baseline' }} fillWidth gap="16">
                     <Column flex={1} gap="4">
                         <Text variant="body-strong-l">Team Leader @ Auburn Hacks</Text>
                         <Text variant="body-default-m" onBackground="brand-medium" weight="strong">Java</Text>
@@ -216,8 +212,7 @@ export default function Resume() {
 
         {/* Technical Skills Section */}
         <Column fillWidth gap="24">
-            <Row vertical="center" gap="16" horizontal="center">
-                <Line background="neutral-alpha-medium" flex={1} />
+            <Row vertical="center" gap="16" horizontal="center"> 
                 <Heading variant="display-strong-s">Technical Skills</Heading>
                 <Line background="neutral-alpha-medium" flex={1} />
             </Row>
