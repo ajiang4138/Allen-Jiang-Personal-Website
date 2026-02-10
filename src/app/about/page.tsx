@@ -10,6 +10,7 @@ import {
   IconButton,
   Media,
   Meta,
+  RevealFx,
   Row,
   Schema,
   Tag,
@@ -84,6 +85,7 @@ export default function About() {
       )}
       <Row fillWidth s={{ direction: "column"}} horizontal="center">
         {about.avatar.display && (
+          <RevealFx translateY="4" fillWidth>
           <Column
             className={styles.avatar}
             top="64"
@@ -113,7 +115,9 @@ export default function About() {
               </Row>
             )}
           </Column>
+          </RevealFx>
         )}
+        <RevealFx translateY="8" delay={0.2} fillWidth>
         <Column className={styles.blockAlign} flex={9} maxWidth={40}>
           <Column
             id={about.intro.title}
@@ -363,6 +367,7 @@ export default function About() {
             </>
           )}
         </Column>
+        </RevealFx>
       </Row>
     </Column>
   );

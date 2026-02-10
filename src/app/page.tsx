@@ -1,7 +1,7 @@
 import { Mailchimp } from "@/components";
 import { Posts } from "@/components/blog/Posts";
 import { Projects } from "@/components/work/Projects";
-import { about, baseURL, home, person, routes } from "@/resources";
+import { about, baseURL, home, person, resume, routes } from "@/resources";
 import {
   Avatar,
   Badge,
@@ -138,6 +138,45 @@ export default function Home() {
         </Column>
       )}
       <Mailchimp />
+      <RevealFx translateY="16" delay={0.8}>
+        <Column fillWidth gap="24" paddingY="40">
+          <Row fillWidth horizontal="center">
+            <Line maxWidth={48} />
+          </Row>
+          <Column fillWidth gap="24" horizontal="center" align="center">
+            <Heading as="h2" variant="display-strong-xs" wrap="balance">
+              View My Resume
+            </Heading>
+            <Text variant="body-default-l" onBackground="neutral-weak" align="center">
+              Check out my experience, skills, and achievements
+            </Text>
+            <Row gap="16" wrap horizontal="center">
+              <Button
+                data-border="rounded"
+                href={resume.path}
+                variant="primary"
+                size="l"
+                arrowIcon
+              >
+                View Resume
+              </Button>
+              <Button
+                data-border="rounded"
+                href="/images/Allen_Jiang_s_Resume_Spring_2026.pdf"
+                variant="secondary"
+                size="l"
+                prefixIcon="filepdf"
+                download="Allen_Jiang_Resume_2026.pdf"
+              >
+                Download PDF
+              </Button>
+            </Row>
+          </Column>
+          <Row fillWidth horizontal="center">
+            <Line maxWidth={48} />
+          </Row>
+        </Column>
+      </RevealFx>
     </Column>
   );
 }

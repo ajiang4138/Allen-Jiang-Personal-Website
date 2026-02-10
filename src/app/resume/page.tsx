@@ -1,5 +1,5 @@
 import { about, baseURL, person, resume } from "@/resources";
-import { Button, Column, Flex, Heading, Line, List, Meta, Row, Schema, Text } from "@once-ui-system/core";
+import { Button, Column, Flex, Heading, Line, List, Meta, RevealFx, Row, Schema, Text } from "@once-ui-system/core";
 
 export async function generateMetadata() {
     return Meta.generate({
@@ -29,13 +29,16 @@ export default function Resume() {
         />
     
         {/* Page Title */}
+        <RevealFx translateY="4" fillWidth>
         <Flex fillWidth vertical="center" horizontal="center">
             <Heading variant="display-strong-s" onBackground="neutral-weak">
                 {resume.label}
             </Heading>
         </Flex>
+        </RevealFx>
 
         {/* Information Section */}
+        <RevealFx translateY="8" delay={0.2} fillWidth>
         <Column fillWidth gap="12" horizontal="center" >
             <Heading variant="display-strong-l">
                 {person.name}
@@ -50,8 +53,10 @@ export default function Resume() {
                 <Text variant="body-default-m" onBackground="neutral-weak">github.com/ajiang4138</Text>
             </Row>
         </Column>
+        </RevealFx>
         
         {/* Education Section */}
+        <RevealFx translateY="8" delay={0.3} fillWidth>
         <Column fillWidth gap="24">
             <Row vertical="center" gap="16" horizontal="center">
                 <Heading variant="display-strong-s">Education</Heading>
@@ -75,8 +80,10 @@ export default function Resume() {
                 </Column>
             </Column>
         </Column>
+        </RevealFx>
 
         {/* Experience Section */}
+        <RevealFx translateY="8" delay={0.4} fillWidth>
         <Column fillWidth gap="24">
             <Row vertical="center" gap="16" horizontal="center">
                 <Heading variant="display-strong-s">Experience</Heading>
@@ -120,8 +127,10 @@ export default function Resume() {
                 </List>
             </Column>
         </Column>
+        </RevealFx>
 
         {/* Projects Section */}
+        <RevealFx translateY="8" delay={0.5} fillWidth>
         <Column fillWidth gap="24">
             <Row vertical="center" gap="16" horizontal="center">
                 <Heading variant="display-strong-s">Projects</Heading>
@@ -187,8 +196,10 @@ export default function Resume() {
                 </List>
             </Column>
         </Column>
+        </RevealFx>
 
         {/* Leadership Section */}
+        <RevealFx translateY="8" delay={0.6} fillWidth>
         <Column fillWidth gap="24">
             <Row vertical="center" gap="16" horizontal="center">
                 <Heading variant="display-strong-s">Leadership</Heading>
@@ -209,8 +220,10 @@ export default function Resume() {
                 </List>
             </Column>
         </Column>
+        </RevealFx>
 
         {/* Technical Skills Section */}
+        <RevealFx translateY="8" delay={0.7} fillWidth>
         <Column fillWidth gap="24">
             <Row vertical="center" gap="16" horizontal="center"> 
                 <Heading variant="display-strong-s">Technical Skills</Heading>
@@ -222,8 +235,10 @@ export default function Resume() {
                 <Row gap="8"><Text variant="body-strong-m">Tools:</Text><Text variant="body-default-m">Git, GNURadio, Vercel, Supabase, Unity, Jupyter Notebook, Android Studio</Text></Row>
             </Column>
         </Column>
+        </RevealFx>
 
         {/* PDF Section */}
+        <RevealFx translateY="8" delay={0.8} fillWidth>
         <Column fillWidth gap="24" paddingTop="24" marginBottom="64">
             <Row vertical="center" gap="16" horizontal="center">
                 <Line background="neutral-alpha-medium" flex={1} />
@@ -257,6 +272,7 @@ export default function Resume() {
                 </Button>
             </Flex>
         </Column>
+        </RevealFx>
     </Column>
     );
 }
