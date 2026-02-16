@@ -176,7 +176,7 @@ export const Header = () => {
                       selected={pathname.startsWith("/gallery")}
                     />
                   </Row>
-                  <Row hide s={{ hide: false }}>
+                  <Row hide s={{ hide: true }}>
                     <ToggleButton
                       prefixIcon="gallery"
                       href="/gallery"

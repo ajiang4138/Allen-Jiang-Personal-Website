@@ -100,10 +100,12 @@ const about: About = {
     description: (
       <>
         Hi, I'm Allen, a software engineer passionate about building intelligent systems that solve real world problems. 
-        I enjoy data sciences and machine learning, and I'm always open to more knowledge in these fields.
+        My concentrations are in Artificial Intelligence and Networks, and I enjoy data sciences and machine learning. 
+        I'm always open to more knowledge in these fields.
         <br />
         <br />
-        Currently, I'm a student and researcher at Georgia Tech, where I'm working on developing an AI-powered radio transmission system. 
+        Currently, I'm a student and researcher at Georgia Tech, where I'm working on developing an AI-powered signal transmission system,
+        using AI models to improve semantic communications.
         <br />
         <br />
         Feel free to reach out and connect with me on any platform!
@@ -264,11 +266,11 @@ const about: About = {
     items: [
       {
         title: "Game Development",
-        description: <>I enjoy dabbling in game development using Unity and GameMakerStudios. Recent projects include an action platformer and a rogue-like game, coming to my Github soon!</>,
+        description: <>I enjoy dabbling in game development using Unity and GameMakerStudios. My most recent project is an action platformer, coming to my Github soon!</>,
       },
       {
         title: "Photography",
-        description: <>I occasionally travel, and enjoy capturing photos of the landscapes and cultures I encounter. Check them out in the gallery!</>,
+        description: <>I occasionally travel, and enjoy capturing photos of the cityscapes and cultures I encounter. View them in my gallery!</>,
       },
       {
         title: "Guitar",
