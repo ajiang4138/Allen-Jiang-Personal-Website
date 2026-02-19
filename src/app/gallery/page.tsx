@@ -28,17 +28,17 @@ export default function Gallery() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <RevealFx translateY="4" fillWidth horizontal="center">
+      <RevealFx translateY={4} fillWidth horizontal="center">
         <Heading marginBottom="8" variant="heading-strong-xl" align="center">
           {gallery.title}
         </Heading>
       </RevealFx>
-      <RevealFx translateY="6" delay={0.1} fillWidth horizontal="center">
+      <RevealFx translateY={6} delay={0.1} fillWidth horizontal="center">
         <Text variant="body-default-s" onBackground="neutral-weak" marginBottom="l">
           Click an image to view its caption!
         </Text>
       </RevealFx>
-      <RevealFx translateY="4" fillWidth>
+      <RevealFx translateY={4} fillWidth>
         <GalleryView />
       </RevealFx>
     </Column>
