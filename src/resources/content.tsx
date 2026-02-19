@@ -307,43 +307,73 @@ const gallery: Gallery = {
   // These are placeholder images, replace with your own
   images: [
     {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
+      src: "/images/gallery/china_vertical_1.jpeg",
+      alt: "china vertical 1",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
+      src: "/images/gallery/china_vertical_2.jpeg",
+      alt: "china vertical 2",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
+      src: "/images/gallery/china_vertical_3.jpeg",
+      alt: "china vertical 3",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
+      src: "/images/gallery/china_vertical_4.jpeg",
+      alt: "china vertical 4",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/china_vertical_5.jpeg",
+      alt: "china vertical 5",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/china_vertical_6.jpeg",
+      alt: "china vertical 6",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/china_vertical_7.jpeg",
+      alt: "china vertical 7",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/china_vertical_8.jpeg",
+      alt: "china vertical 8",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/china_vertical_9.jpeg",
+      alt: "china vertical 9",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/ny_vertical_1.jpeg",
+      alt: "new york vertical 1",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/ny_vertical_2.jpeg",
+      alt: "new york vertical 2",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/vegas_horizontal_1.jpeg",
+      alt: "vegas horizontal 1",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
+      src: "/images/gallery/vegas_horizontal_2.jpeg",
+      alt: "vegas horizontal 2",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
+      src: "/images/gallery/vegas_vertical_1.jpeg",
+      alt: "vegas vertical 1",
       orientation: "vertical",
     },
   ],

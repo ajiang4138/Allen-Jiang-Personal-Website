@@ -1,11 +1,17 @@
 "use client";
 
 import { ProjectCard } from "@/components";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 interface ProjectData {
   slug: string;
-  metadata: any;
+  metadata: {
+    images: string[];
+    title: string;
+    summary: string;
+    team?: { avatar: string }[];
+    link?: string;
+  };
   content: string;
 }
 
@@ -25,36 +31,65 @@ export default function ProjectsCarousel({ projects, interval = 8000 }: Props) {
   const contentRef = useRef<HTMLDivElement | null>(null);
   const [containerHeight, setContainerHeight] = useState<number | null>(null);
 
-  useEffect(() => {
-    if (!projects || projects.length < 2) return;
+  const clearTransitionTimers = useCallback(() => {
+    if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
+    if (fadeInRef.current) window.clearTimeout(fadeInRef.current);
+  }, []);
 
-    function next() {
-      // start fade-out
+  const transitionTo = useCallback(
+    (delta: number) => {
+      if (!projects || projects.length < 2) return;
+
+      clearTransitionTimers();
       setVisible(false);
-      // after fade-out, switch slide and trigger fade-in on next tick
+
       timeoutRef.current = window.setTimeout(() => {
-        setIndex((i) => (i + 1) % projects.length);
-        // ensure new slide mounts with visible=false, then trigger fade-in shortly after
-        if (fadeInRef.current) window.clearTimeout(fadeInRef.current);
+        setIndex((i) => (i + delta + projects.length) % projects.length);
         fadeInRef.current = window.setTimeout(() => setVisible(true), 30);
       }, TRANSITION_MS);
-    }
+    },
+    [projects, clearTransitionTimers],
+  );
 
-    intervalRef.current = window.setInterval(next, interval);
+  const restartAutoRotate = useCallback(() => {
+    if (intervalRef.current) window.clearInterval(intervalRef.current);
+    if (!projects || projects.length < 2) return;
+    intervalRef.current = window.setInterval(() => transitionTo(1), interval);
+  }, [projects, interval, transitionTo]);
+
+  useEffect(() => {
+    restartAutoRotate();
 
     return () => {
       if (intervalRef.current) window.clearInterval(intervalRef.current);
-      if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
-      if (fadeInRef.current) window.clearTimeout(fadeInRef.current);
+      clearTransitionTimers();
     };
-  }, [projects, interval]);
+  }, [restartAutoRotate, clearTransitionTimers]);
 
   useEffect(() => {
-    setIndex(0);
+    setIndex((currentIndex) => {
+      if (!projects.length) return 0;
+      return currentIndex % projects.length;
+    });
     setVisible(true);
-  }, [projects.map((p) => p.slug).join(",")]);
+  }, [projects.length]);
 
   const current = projects[index];
+  const canNavigate = projects.length > 1;
+
+  function handleDotClick(targetIndex: number) {
+    if (targetIndex === index || !projects.length) return;
+
+    clearTransitionTimers();
+    setVisible(false);
+
+    timeoutRef.current = window.setTimeout(() => {
+      setIndex(targetIndex);
+      fadeInRef.current = window.setTimeout(() => setVisible(true), 30);
+    }, TRANSITION_MS);
+
+    restartAutoRotate();
+  }
 
   if (!current) return null;
 
@@ -65,32 +100,62 @@ export default function ProjectsCarousel({ projects, interval = 8000 }: Props) {
     const h = el.offsetHeight;
     setContainerHeight(h);
     // animate height changes slightly
-  }, [index, visible]);
+  });
 
   return (
-    <div style={{ position: "relative", overflow: "hidden", height: containerHeight ? `${containerHeight}px` : "auto", transition: `height ${TRANSITION_MS}ms ease` }}>
-      <div
-        key={current.slug}
-        ref={contentRef}
-        style={{
-          transition: `opacity ${TRANSITION_MS}ms cubic-bezier(0.2,0.8,0.2,1), transform ${TRANSITION_MS}ms cubic-bezier(0.2,0.8,0.2,1)`,
-          opacity: visible ? 1 : 0,
-          transform: visible ? "translateY(0) scale(1)" : "translateY(8px) scale(0.98)",
-          willChange: "opacity, transform",
-          position: "relative",
-        }}
-      >
-        <ProjectCard
-          priority={index < 2}
-          href={`/work/${current.slug}`}
-          images={current.metadata.images}
-          title={current.metadata.title}
-          description={current.metadata.summary}
-          content={current.content}
-          avatars={current.metadata.team?.map((member: any) => ({ src: member.avatar })) || []}
-          link={current.metadata.link || ""}
-        />
+    <div>
+      <div style={{ position: "relative", overflow: "hidden", height: containerHeight ? `${containerHeight}px` : "auto", transition: `height ${TRANSITION_MS}ms ease` }}>
+        <div
+          key={current.slug}
+          ref={contentRef}
+          style={{
+            transition: `opacity ${TRANSITION_MS}ms cubic-bezier(0.2,0.8,0.2,1), transform ${TRANSITION_MS}ms cubic-bezier(0.2,0.8,0.2,1)`,
+            opacity: visible ? 1 : 0,
+            transform: visible ? "translateY(0) scale(1)" : "translateY(8px) scale(0.98)",
+            willChange: "opacity, transform",
+            position: "relative",
+          }}
+        >
+          <ProjectCard
+            priority={index < 2}
+            href={`/work/${current.slug}`}
+            images={current.metadata.images}
+            title={current.metadata.title}
+            description={current.metadata.summary}
+            content={current.content}
+            avatars={current.metadata.team?.map((member) => ({ src: member.avatar })) || []}
+            link={current.metadata.link || ""}
+          />
+        </div>
       </div>
+      {canNavigate && (
+        <div style={{ display: "flex", gap: "0.5rem", justifyContent: "center", marginTop: "1rem" }}>
+          {projects.map((project, dotIndex) => {
+            const isActive = dotIndex === index;
+
+            return (
+              <button
+                key={project.slug}
+                type="button"
+                aria-label={`View featured work ${dotIndex + 1}`}
+                aria-current={isActive ? "true" : undefined}
+                onClick={() => handleDotClick(dotIndex)}
+                style={{
+                  width: "0.625rem",
+                  height: "0.625rem",
+                  borderRadius: "9999px",
+                  border: "none",
+                  background: isActive
+                    ? "var(--brand-solid-strong)"
+                    : "var(--neutral-alpha-medium)",
+                  opacity: isActive ? 1 : 0.7,
+                  cursor: "pointer",
+                }}
+              />
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

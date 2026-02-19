@@ -3,17 +3,17 @@ import { Posts } from "@/components/blog/Posts";
 import { Projects } from "@/components/work/Projects";
 import { about, baseURL, home, person, resume, routes } from "@/resources";
 import {
-  Avatar,
-  Badge,
-  Button,
-  Column,
-  Heading,
-  Line,
-  Meta,
-  RevealFx,
-  Row,
-  Schema,
-  Text,
+    Avatar,
+    Badge,
+    Button,
+    Column,
+    Heading,
+    Line,
+    Meta,
+    RevealFx,
+    Row,
+    Schema,
+    Text,
 } from "@once-ui-system/core";
 
 export async function generateMetadata() {
