@@ -110,7 +110,6 @@ export default function Home() {
           <Projects
             carouselItems={[
               "planetway-experience",
-              "agile-communications-research",
               "wrappedify-spotify-summaries",
             ]}
             carouselInterval={8000}
